@@ -4,16 +4,18 @@ Apresentação interativa em HTML sobre a modernização da infraestrutura e int
 
 ## 📋 Conteúdo da Apresentação
 
-A apresentação conta com 8 slides principais:
+A apresentação conta com 10 slides principais:
 
 1. **Título e Equipe** - Introdução ao HealthFlow Digital e apresentação da equipe do projeto
-2. **Visão Geral** - Transformando a Saúde com Tecnologia (infraestrutura AWS, IA e segurança LGPD)
-3. **Alta Disponibilidade** - Arquitetura Multi-AZ com 99.9% de uptime
-4. **Segurança** - Proteção de dados com Zero Trust (KMS, WAF e CloudTrail)
-5. **IA & Machine Learning** - Amazon Bedrock e Transcribe para automação clínica
-6. **FinOps & Otimização** - Redução de custos com Spot Instances e Savings Plans
-7. **Arquitetura Técnica** - Demonstração em vídeo (arquitetura.mp4)
-8. **Roadmap** - Fases de implementação: Migração Core → IA & Analytics → Global
+2. **Agenda Executiva** - Quatro pilares: Transformação Arquitetural, DevOps e Alta Disponibilidade, Segurança Zero Trust, e IA Generativa
+3. **Cenário Anterior** - Infraestrutura Legacy: riscos, limitações e impactos operacionais (97% de disponibilidade)
+4. **Arquitetura Moderna** - Solução cloud-native: EKS Multi-AZ, microsserviços, auto-scaling e balanceamento de carga (99.95% de uptime)
+5. **Arquitetura Técnica** - Demonstração em vídeo da infraestrutura (arquitetura.mp4)
+6. **Pipeline CI/CD** - Automação de ponta a ponta: GitHub → Trivy → ECR → ArgoCD → EKS (20 deploys/semana)
+7. **Segurança em Camadas** - Modelo Zero Trust com WAF, IAM, GuardDuty e Blockchain para compliance HIPAA/LGPD
+8. **IA Generativa** - Amazon Bedrock: resumo automático, alertas de interação, busca semântica e assistente clínico
+9. **FinOps** - Otimização de custos e gestão financeira da infraestrutura
+10. **Roadmap** - Fases de implementação: Migração Core (atual) → IA & Analytics (3-6 meses) → Global (+12 meses)
 
 ## 🚀 Como Usar
 
@@ -25,7 +27,7 @@ A apresentação conta com 8 slides principais:
    - **Teclado:** Use as setas para esquerda/direita
 
 3. **Visualizar progresso:**
-   - O indicador "Slide X de 8" mostra sua posição atual
+   - O indicador "Slide X de 10" mostra sua posição atual
 
 ## 💻 Tecnologias Utilizadas
 
