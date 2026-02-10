@@ -57,10 +57,10 @@
         .slide-section.active {
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centraliza verticalmente */
+            justify-content: center;
         }
         
-        /* Ajuste para slides com muito conteúdo rolarem se necessário */
+        /* Ajuste para rolagem interna */
         .slide-section.content-heavy {
             justify-content: flex-start;
             padding-top: 4rem;
@@ -75,11 +75,6 @@
         .timeline-vertical { position: relative; padding-left: 2rem; border-left: 4px solid #CBD5E0; margin-left: 1rem; }
         .timeline-v-item { position: relative; margin-bottom: 2rem; }
         .timeline-v-dot { position: absolute; left: -2.6rem; top: 0; width: 20px; height: 20px; background: #2C7A7B; border: 4px solid white; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-
-        /* --- Ícones AWS --- */
-        .aws-icon-lg { width: 64px; height: 64px; object-fit: contain; }
-        .aws-icon-md { width: 48px; height: 48px; object-fit: contain; }
-        .aws-icon-sm { width: 32px; height: 32px; object-fit: contain; }
 
         /* --- Navegação --- */
         .nav-bar {
@@ -210,39 +205,71 @@
         <section id="slide-2" class="slide-section items-center">
             <div class="max-w-6xl mx-auto w-full animate-entry">
                 <div class="text-center mb-10">
-                    <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Legacy</span>
-                    <h2 class="text-4xl font-extrabold text-slate-800 mt-4">CENÁRIO ANTERIOR</h2>
-                    <h3 class="text-xl text-slate-500 mt-2">Infraestrutura Legacy: Riscos e Limitações</h3>
+                    <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide border border-red-200">Cenário Legacy</span>
+                    <h2 class="text-4xl font-extrabold text-slate-800 mt-4">INFRAESTRUTURA FRÁGIL</h2>
+                    <h3 class="text-xl text-slate-500 mt-2">Instabilidade Crítica & Riscos Operacionais</h3>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-l-8 border-danger mb-8">
-                    <p class="text-lg text-slate-700 leading-relaxed">
-                        <i class="fa-solid fa-triangle-exclamation text-danger mr-2"></i>
-                        Servidor monolítico on-premise com <strong>disponibilidade crítica de apenas 97%</strong>, gerando <strong>6 horas de downtime mensal</strong> e impactando diretamente atendimentos médicos e a experiência do paciente.
-                    </p>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-l-8 border-red-500 mb-10 relative overflow-hidden">
+                    <div class="absolute right-0 top-0 opacity-5 text-9xl text-red-500 -mr-10 -mt-10">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-center gap-6">
+                        <div class="flex gap-4">
+                             <div class="bg-red-50 p-4 rounded-lg text-center border border-red-100">
+                                <i class="fa-solid fa-server text-3xl text-red-600 mb-2"></i>
+                                <p class="text-xs font-bold text-red-800">EC2 #1<br>Monolito</p>
+                             </div>
+                             <div class="bg-red-50 p-4 rounded-lg text-center border border-red-100">
+                                <i class="fa-solid fa-film text-3xl text-red-600 mb-2"></i>
+                                <p class="text-xs font-bold text-red-800">EC2 #2<br>Mídia</p>
+                             </div>
+                        </div>
+                        <div class="border-l border-slate-200 pl-6">
+                            <h4 class="text-2xl font-bold text-slate-800 mb-2">Ambiente Não-Redundante</h4>
+                            <p class="text-slate-600 leading-relaxed text-lg">
+                                Infraestrutura limitada a <strong>2 instâncias isoladas</strong>.
+                                <br>
+                                <strong class="text-red-600">Disponibilidade de 97%</strong> = 6h de downtime mensal impactando pacientes.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <div class="bg-danger-light p-6 rounded-xl border border-danger text-center">
-                        <i class="fa-solid fa-server text-3xl text-danger mb-4"></i>
-                        <h4 class="font-bold text-slate-800 mb-2">Single Point of Failure</h4>
-                        <p class="text-xs text-slate-600">Arquitetura monolítica sem redundância ou failover automático.</p>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow-md border-t-4 border-red-400 hover:shadow-lg transition">
+                        <div class="mb-3 text-red-500 text-2xl"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h5 class="font-bold text-slate-800 mb-2">Configuração 100% Manual</h5>
+                        <p class="text-xs text-slate-500">
+                            Sem automação. Processo "ClickOps" lento e sujeito a erros humanos graves.
+                        </p>
                     </div>
-                    <div class="bg-danger-light p-6 rounded-xl border border-danger text-center">
-                        <i class="fa-solid fa-hourglass-start text-3xl text-danger mb-4"></i>
-                        <h4 class="font-bold text-slate-800 mb-2">Deploy Manual e Lento</h4>
-                        <p class="text-xs text-slate-600">Apenas 2 releases por mês com risco elevado de erros humanos.</p>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md border-t-4 border-red-400 hover:shadow-lg transition">
+                        <div class="mb-3 text-red-500 text-2xl"><i class="fa-solid fa-link-slash"></i></div>
+                        <h5 class="font-bold text-slate-800 mb-2">Ponto Único de Falha</h5>
+                        <p class="text-xs text-slate-500">
+                            Sem redundância. Se o monolito ou servidor de vídeo cair, o serviço para totalmente.
+                        </p>
                     </div>
-                    <div class="bg-danger-light p-6 rounded-xl border border-danger text-center">
-                        <i class="fa-solid fa-chart-line-down text-3xl text-danger mb-4"></i>
-                        <h4 class="font-bold text-slate-800 mb-2">Escalabilidade Limitada</h4>
-                        <p class="text-xs text-slate-600">Recursos fixos incapazes de absorver picos de demanda.</p>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md border-t-4 border-red-400 hover:shadow-lg transition">
+                        <div class="mb-3 text-red-500 text-2xl"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+                        <h5 class="font-bold text-slate-800 mb-2">Dependência de Escala Vertical</h5>
+                        <p class="text-xs text-slate-500">
+                            Impossível escalar horizontalmente. Aumentar recursos exige desligar o servidor (downtime).
+                        </p>
                     </div>
-                    <div class="bg-danger-light p-6 rounded-xl border border-danger text-center">
-                        <i class="fa-solid fa-ban text-3xl text-danger mb-4"></i>
-                        <h4 class="font-bold text-slate-800 mb-2">6h Downtime/Mês</h4>
-                        <p class="text-xs text-slate-600">Interrupções não planejadas comprometendo operações críticas.</p>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md border-t-4 border-red-400 hover:shadow-lg transition">
+                        <div class="mb-3 text-red-500 text-2xl"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h5 class="font-bold text-slate-800 mb-2">Single AZ & Sem Failover</h5>
+                        <p class="text-xs text-slate-500">
+                            Sem Multi-AZ. Vulnerabilidade total a falhas de zona da AWS. Sem recuperação automática.
+                        </p>
                     </div>
+
                 </div>
             </div>
         </section>
